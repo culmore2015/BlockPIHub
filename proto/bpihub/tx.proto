@@ -1,0 +1,43 @@
+syntax = "proto3";
+package madtechworks.bpihub.bpihub;
+
+// this line is used by starport scaffolding # proto/tx/import
+
+option go_package = "github.com/madtechworks/bpihub/x/bpihub/types";
+
+// Msg defines the Msg service.
+service Msg {
+    // this line is used by starport scaffolding # proto/tx/rpc
+  rpc CreateProvider(MsgCreateProvider) returns (MsgCreateProviderResponse);
+  rpc UpdateProvider(MsgUpdateProvider) returns (MsgUpdateProviderResponse);
+  rpc DeleteProvider(MsgDeleteProvider) returns (MsgDeleteProviderResponse);
+}
+
+// this line is used by starport scaffolding # proto/tx/message
+message MsgCreateProvider {
+  string creator = 1;
+  string name = 2;
+  string details = 3;
+  string website = 4;
+}
+
+message MsgCreateProviderResponse {
+  uint64 id = 1;
+}
+
+message MsgUpdateProvider {
+  string creator = 1;
+  uint64 id = 2;
+  string name = 3;
+  string details = 4;
+  string website = 5;
+}
+
+message MsgUpdateProviderResponse { }
+
+message MsgDeleteProvider {
+  string creator = 1;
+  uint64 id = 2;
+}
+
+message MsgDeleteProviderResponse { }

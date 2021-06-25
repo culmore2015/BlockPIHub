@@ -1,0 +1,14 @@
+syntax = "proto3";
+package madtechworks.bpihub.bpihub;
+
+// this line is used by starport scaffolding # genesis/proto/import
+import "bpihub/provider.proto";
+
+option go_package = "github.com/madtechworks/bpihub/x/bpihub/types";
+
+// GenesisState defines the capability module's genesis state.
+message GenesisState {
+    // this line is used by starport scaffolding # genesis/proto/state
+		repeated Provider providerList = 1; // this line is used by starport scaffolding # genesis/proto/stateField
+}
+

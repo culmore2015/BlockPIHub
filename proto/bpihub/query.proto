@@ -1,0 +1,39 @@
+syntax = "proto3";
+package madtechworks.bpihub.bpihub;
+
+import "google/api/annotations.proto";
+import "cosmos/base/query/v1beta1/pagination.proto";
+// this line is used by starport scaffolding # 1
+import "bpihub/provider.proto";
+
+option go_package = "github.com/madtechworks/bpihub/x/bpihub/types";
+
+// Query defines the gRPC querier service.
+service Query {
+    // this line is used by starport scaffolding # 2
+	rpc Provider(QueryGetProviderRequest) returns (QueryGetProviderResponse) {
+		option (google.api.http).get = "/madtechworks/bpihub/bpihub/provider/{id}";
+	}
+	rpc ProviderAll(QueryAllProviderRequest) returns (QueryAllProviderResponse) {
+		option (google.api.http).get = "/madtechworks/bpihub/bpihub/provider";
+	}
+
+}
+
+// this line is used by starport scaffolding # 3
+message QueryGetProviderRequest {
+	uint64 id = 1;
+}
+
+message QueryGetProviderResponse {
+	Provider Provider = 1;
+}
+
+message QueryAllProviderRequest {
+	cosmos.base.query.v1beta1.PageRequest pagination = 1;
+}
+
+message QueryAllProviderResponse {
+	repeated Provider Provider = 1;
+	cosmos.base.query.v1beta1.PageResponse pagination = 2;
+}

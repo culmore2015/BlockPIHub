@@ -1,0 +1,14 @@
+syntax = "proto3";
+package madtechworks.bpihub.bpihub;
+
+option go_package = "github.com/madtechworks/bpihub/x/bpihub/types";
+
+import "gogoproto/gogo.proto";
+
+message Provider {
+  string creator = 1;
+  uint64 id = 2;
+  string name = 3; 
+  string details = 4; 
+  string website = 5; 
+}

@@ -1,0 +1,23 @@
+accounts:
+  - name: alice
+    coins: ["1000token", "100000000stake"]
+  - name: bob
+    coins: ["500token"]
+validator:
+  name: alice
+  staked: "100000000stake"
+client:
+  vuex:
+    path: "vue/src/store"
+faucet:
+  host: "0.0.0.0:4500"
+  name: bob 
+  coins: ["5token"]
+host:
+  rpc: "0.0.0.0:26657"
+  p2p: "0.0.0.0:26656"
+  prof: "0.0.0.0:6060"
+  grpc: "0.0.0.0:9090"
+  api: "0.0.0.0:1314"
+  frontend: "0.0.0.0:8080"
+  dev-ui: "0.0.0.0:12345"
